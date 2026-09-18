@@ -9,9 +9,7 @@ def get_connection():
     return sqlite3.connect(DB_NAME)
 
 
-# ============================================================
-# READ - GET ALL SALES
-# ============================================================
+
 
 def get_all_sales():
     conn = get_connection()
@@ -26,9 +24,7 @@ def get_all_sales():
         conn.close()
 
 
-# ============================================================
-# READ - GET ONE SALE
-# ============================================================
+
 
 def get_sale(transaction_id):
     conn = get_connection()
@@ -51,9 +47,7 @@ def get_sale(transaction_id):
         conn.close()
 
 
-# ============================================================
-# CREATE - ADD SALE
-# ============================================================
+
 
 def add_sale(
     transaction_id,
@@ -110,9 +104,7 @@ def add_sale(
         conn.close()
 
 
-# ============================================================
-# UPDATE - UPDATE SALE
-# ============================================================
+
 
 def update_sale(
     transaction_id,
@@ -155,9 +147,7 @@ def update_sale(
         conn.close()
 
 
-# ============================================================
-# DELETE - DELETE SALE
-# ============================================================
+
 
 def delete_sale(transaction_id):
     conn = get_connection()
@@ -185,9 +175,7 @@ def delete_sale(transaction_id):
         conn.close()
 
 
-# ============================================================
-# SEARCH
-# ============================================================
+
 
 def search_sales(search_text):
 

@@ -4,9 +4,7 @@ import requests
 BASE_URL = "http://127.0.0.1:8000"
 
 
-# ============================================================
-# HELPER
-# ============================================================
+
 
 def handle_response(response):
 
@@ -15,14 +13,6 @@ def handle_response(response):
     return response.json()
 
 
-# ============================================================
-# SALES APIs
-# ============================================================
-
-
-# ------------------------------------------------------------
-# GET ALL SALES
-# ------------------------------------------------------------
 
 def get_sales():
 
@@ -33,10 +23,6 @@ def get_sales():
     return handle_response(response)
 
 
-# ------------------------------------------------------------
-# GET ONE SALE
-# ------------------------------------------------------------
-
 def get_sale(transaction_id):
 
     response = requests.get(
@@ -45,10 +31,6 @@ def get_sale(transaction_id):
 
     return handle_response(response)
 
-
-# ------------------------------------------------------------
-# ADD SALE
-# ------------------------------------------------------------
 
 def create_sale(
     transaction_id,
@@ -96,10 +78,6 @@ def create_sale(
     return handle_response(response)
 
 
-# ------------------------------------------------------------
-# UPDATE SALE
-# ------------------------------------------------------------
-
 def update_sale(
     transaction_id,
     quantity,
@@ -123,10 +101,6 @@ def update_sale(
     return handle_response(response)
 
 
-# ------------------------------------------------------------
-# DELETE SALE
-# ------------------------------------------------------------
-
 def delete_sale(transaction_id):
 
     response = requests.delete(
@@ -135,10 +109,6 @@ def delete_sale(transaction_id):
 
     return handle_response(response)
 
-
-# ------------------------------------------------------------
-# SEARCH
-# ------------------------------------------------------------
 
 def search_sales(search_text):
 
@@ -149,15 +119,6 @@ def search_sales(search_text):
     return handle_response(response)
 
 
-# ============================================================
-# ANALYTICS APIs
-# ============================================================
-
-
-# ------------------------------------------------------------
-# TOTAL SALES
-# ------------------------------------------------------------
-
 def get_total_sales():
 
     response = requests.get(
@@ -166,10 +127,6 @@ def get_total_sales():
 
     return handle_response(response)
 
-
-# ------------------------------------------------------------
-# TOTAL QUANTITY
-# ------------------------------------------------------------
 
 def get_total_quantity():
 
@@ -180,10 +137,6 @@ def get_total_quantity():
     return handle_response(response)
 
 
-# ------------------------------------------------------------
-# BEST SELLING
-# ------------------------------------------------------------
-
 def get_best_selling():
 
     response = requests.get(
@@ -191,11 +144,6 @@ def get_best_selling():
     )
 
     return handle_response(response)
-
-
-# ------------------------------------------------------------
-# SLOW MOVING
-# ------------------------------------------------------------
 
 def get_slow_moving():
 
@@ -206,10 +154,6 @@ def get_slow_moving():
     return handle_response(response)
 
 
-# ------------------------------------------------------------
-# CATEGORY SALES
-# ------------------------------------------------------------
-
 def get_category_sales():
 
     response = requests.get(
@@ -219,10 +163,6 @@ def get_category_sales():
     return handle_response(response)
 
 
-# ------------------------------------------------------------
-# MONTHLY SALES
-# ------------------------------------------------------------
-
 def get_monthly_sales():
 
     response = requests.get(
@@ -231,10 +171,6 @@ def get_monthly_sales():
 
     return handle_response(response)
 
-
-# ------------------------------------------------------------
-# SUMMARY
-# ------------------------------------------------------------
 
 def get_summary():
 

@@ -4,11 +4,6 @@ import pandas as pd
 
 DB_NAME = "inventory.db"
 
-
-# ============================================================
-# GET SALES DATA
-# ============================================================
-
 def get_sales_data():
 
     conn = sqlite3.connect(DB_NAME)
@@ -25,9 +20,6 @@ def get_sales_data():
         conn.close()
 
 
-# ============================================================
-# TOTAL SALES
-# ============================================================
 
 def calculate_total_sales():
 
@@ -41,10 +33,6 @@ def calculate_total_sales():
     )
 
 
-# ============================================================
-# TOTAL QUANTITY
-# ============================================================
-
 def calculate_total_quantity():
 
     df = get_sales_data()
@@ -57,9 +45,6 @@ def calculate_total_quantity():
     )
 
 
-# ============================================================
-# BEST SELLING CATEGORIES
-# ============================================================
 
 def best_selling_categories():
 
@@ -90,9 +75,6 @@ def best_selling_categories():
     return result
 
 
-# ============================================================
-# SLOW MOVING CATEGORIES
-# ============================================================
 
 def slow_moving_categories():
 
@@ -133,10 +115,6 @@ def slow_moving_categories():
     return slow_moving
 
 
-# ============================================================
-# SALES BY CATEGORY
-# ============================================================
-
 def sales_by_category():
 
     df = get_sales_data()
@@ -165,10 +143,6 @@ def sales_by_category():
 
     return result
 
-
-# ============================================================
-# MONTHLY SALES
-# ============================================================
 
 def monthly_sales():
 
@@ -206,10 +180,6 @@ def monthly_sales():
 
     return result
 
-
-# ============================================================
-# RUN DIRECTLY
-# ============================================================
 
 if __name__ == "__main__":
 

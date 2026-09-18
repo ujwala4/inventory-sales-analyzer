@@ -1,10 +1,11 @@
 import subprocess
 import time
+import sys
 
-
-# Start FastAPI
 api_process = subprocess.Popen(
     [
+        sys.executable,
+        "-m",
         "uvicorn",
         "api:app",
         "--host",
@@ -14,15 +15,16 @@ api_process = subprocess.Popen(
     ]
 )
 
-
-# Give FastAPI a moment to start
 time.sleep(3)
 
+try:
+    subprocess.run(
+        [
+            sys.executable,
+            "app.py"
+        ],
+        check=True
+    )
 
-# Start Gradio
-subprocess.run(
-    [
-        "python",
-        "app.py"
-    ]
-)
+finally:
+    api_process.terminate()
